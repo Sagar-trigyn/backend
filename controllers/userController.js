@@ -36,11 +36,7 @@
                 console.log(users.password,'kk')
                 await users.save()
 
-                const otp = Math.floor(100000 + Math.random() * 900000); // generates a six digit number
-
-                // Save OTP and its creation time in user document or another appropriate place in your database
-                users.otp = otp;
-                users.otpCreatedAt = Date.now(); // save the current time
+             
                 await sendEmail({
                     email: users.email,
                     subject: 'Your OTP',

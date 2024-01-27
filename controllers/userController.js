@@ -36,16 +36,6 @@
                 console.log(users.password,'kk')
                 await users.save()
 
-             
-                await sendEmail({
-                    email: users.email,
-                    subject: 'Your OTP',
-                    message: `Your OTP is ${otp}`
-                });
-                // await users.save();
-
-
-
                 res.cookie("token", token, {
                     expries: new Date(
                         Date.now() + process.env.CookieExpries * 24 * 60 * 60 * 1000

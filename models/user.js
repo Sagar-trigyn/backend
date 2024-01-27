@@ -3,6 +3,9 @@ const validator = require('validator')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const crypto = require('crypto')
+
+
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -17,11 +20,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    messages: {
+        type: [Object], // or [MessageSchema] if you have a separate Message schema
+        default: []
+    }
 
 })
+
+
 // compare password methods
-userSchema.methods.comparePassword = async function(enteredpassword){
-    return await bcrypt.compare(enteredpassword,this.password)
+userSchema.methods.comparePassword = async function (enteredpassword) {
+    return await bcrypt.compare(enteredpassword, this.password)
 }
 
 

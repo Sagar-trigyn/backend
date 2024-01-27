@@ -17,36 +17,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    avatar: {
-        public_id: {
-            type: String,
-            required: true
-        },
-        url: {
-            type: String,
-            required: true
-        }
-    },
-    role: {
-        type: String,
-        default: 'developer'
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    otp:{
-        type:Number,
-        default: null
 
-    },
-    otpCreatedAt:{
-        type:Date,
-        default: null
-
-    },
-    resetpassword: String,
-    resetpasswordExpire: Date
 })
 // compare password methods
 userSchema.methods.comparePassword = async function(enteredpassword){

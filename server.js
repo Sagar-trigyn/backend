@@ -20,9 +20,7 @@ app.get('/', (req, res) => {
 // 
 
 app.use('/api', require('./routes/userRoutes'))
-app.use('/api', require('./routes/tenderRoutes'))
-app.use('/api', require('./controllers/usertenderController'))
-app.use('/api', require('./routes/documentRoutes'))
+app.use('/api', require('./routes/messageRoutes'))
 // schemaName.index({ request: 'text' });  
 const PORT = process.env.PORT || 6000
 app.listen(PORT, () => {
